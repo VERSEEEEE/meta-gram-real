@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class FloorController : MonoBehaviour
 {
+    SceneEffect_Simple sceneEffect;
     public GameObject[] floors;
     public GameObject[] numbers;
 
     void Start()
     {
         InitilizeFloors();
+        sceneEffect = FindObjectOfType<SceneEffect_Simple>();
     }
 
     // Start is called before the first frame update
@@ -43,6 +45,8 @@ public class FloorController : MonoBehaviour
                 if(hit.collider.gameObject.CompareTag("No.1"))
                 {
                     ClickFloor(1);
+                    sceneEffect.FadeToScene("HomeMinju");
+
                 }
                 if(hit.collider.gameObject.CompareTag("No.2"))
                 {
