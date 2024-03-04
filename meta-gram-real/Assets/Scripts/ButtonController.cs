@@ -7,6 +7,8 @@ public class ButtonController : MonoBehaviour
 {
     public GameObject settingPanel;
     public GameObject chatPanel;
+    public GameObject writingPanel;
+    public GameObject newPostPanel;
 
     private bool isSettingPanelActive = false;
     private bool isChatPanelActive = false;
@@ -35,5 +37,20 @@ public class ButtonController : MonoBehaviour
             settingPanel.SetActive(true);
             isSettingPanelActive = true;
         }
+    }
+
+    public void CloseWritingPanel() 
+    {
+        writingPanel.SetActive(false);
+    }
+
+    public void OpenNewPost() 
+    {
+        newPostPanel.SetActive(true);
+    }
+
+    public void CloseNewPost() 
+    {
+        newPostPanel.SetActive(false);
     }
 }
