@@ -19,8 +19,8 @@ public class SceneChanger : MonoBehaviour
         //SceneEffect_Long.Instance.ChangeScene(nextSceneName);
     }
 
-    public void goToSimpleEffect1() {
-        nextSceneName = "SimpleEffect1";    // 옮길 씬 이름 넣기
+    public void goToMirror() {
+        nextSceneName = "Mirror";    // 옮길 씬 이름 넣기
         FindObjectOfType<SceneEffect_Simple>().FadeToScene(nextSceneName);
 
         // SceneManage.Instance.ChangeScene(nextSceneName);
