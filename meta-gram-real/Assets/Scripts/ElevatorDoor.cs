@@ -8,8 +8,11 @@ public class ElevatorDoor : MonoBehaviour
     public GameObject doorL;
     public GameObject doorR;
     private bool canMove;
-    Vector3 doorLClosePosition;
-    Vector3 doorRClosePosition;
+    private Vector3 doorLClosePosition;
+    private Vector3 doorRClosePosition;
+
+    [SerializeField] private float openSpeed;
+    
 
     void Start()
     {
@@ -30,31 +33,46 @@ public class ElevatorDoor : MonoBehaviour
                 {
                     if(hit.collider.gameObject.CompareTag("Btn"))
                     {
-                        doorOpen();
+                        Debug.Log("btn click");
+                        canMove = true;
                     }
                 }
             }
         }
         else
         {
-            doorClose();
+            StartCoroutine(OpenAndCloseDoor());
         }
-        
     }
-    public void doorOpen()
+
+    IEnumerator OpenAndCloseDoor()
     {
-        Debug.Log("버튼 클릭");
-        while (doorL.transform.position.z >= -1.1f && doorR.transform.position.z <= 2.2f)
+        DoorOpen();
+
+        while (doorL.transform.position.z < -2.1f && doorR.transform.position.z > 2.1f)
         {
-            doorL.transform.Translate(Vector3.right * Time.deltaTime);
-            doorR.transform.Translate(Vector3.left * Time.deltaTime);
+            yield return null;
+        }
+        StartCoroutine(CloseDoorAfterDelay(6f));
+    }
+    void DoorOpen()
+    {
+        if(doorL.transform.position.z >= -2.1f && doorR.transform.position.z <= 2.1f)
+        {
+            doorL.transform.Translate(Vector3.right * Time.deltaTime * openSpeed);
+            doorR.transform.Translate(Vector3.left * Time.deltaTime * openSpeed);
         }
     }
-    void doorClose()
+
+    IEnumerator CloseDoorAfterDelay(float delay)
     {
-        if(doorL.transform.position.z <= -1.1f && doorR.transform.position.z >= 2.2f)
-        doorL.transform.position = Vector3.MoveTowards(doorL.transform.position, doorLClosePosition, 0.01f);
-        doorR.transform.position = Vector3.MoveTowards(doorR.transform.position, doorRClosePosition, 0.01f);
+        yield return new WaitForSeconds(delay);
+        DoorClose();
+    }
+    void DoorClose()
+    {
+        doorL.transform.position = Vector3.MoveTowards(doorL.transform.position, doorLClosePosition, openSpeed * Time.deltaTime);
+        doorR.transform.position = Vector3.MoveTowards(doorR.transform.position, doorRClosePosition, openSpeed * Time.deltaTime);
         canMove = false;
     }
 }
