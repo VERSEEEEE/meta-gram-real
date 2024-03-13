@@ -78,9 +78,13 @@ public class CharacterMove : MonoBehaviour
         //     Vector3 playerRotationY = new Vector3(0f, yRotation, 0f) * lookSensitivity;
         //     rigidbody.MoveRotation(rigidbody.rotation * Quaternion.Euler(playerRotationY)); 
         // }
-        float yRotation = Input.GetAxisRaw("Mouse X");
-        Vector3 playerRotationY = new Vector3(0f, yRotation, 0f) * lookSensitivity;
-        rigidbody.MoveRotation(rigidbody.rotation * Quaternion.Euler(playerRotationY)); 
+        // float yRotation = Input.GetAxisRaw("Mouse X");
+        // Vector3 playerRotationY = new Vector3(0f, yRotation, 0f) * lookSensitivity;
+        // rigidbody.MoveRotation(rigidbody.rotation * Quaternion.Euler(playerRotationY)); 
+        float yRotation = Input.GetAxisRaw("Mouse X"); 
+        float cameraRotationY = yRotation * lookSensitivity;
+
+        transform.Rotate(Vector3.up, cameraRotationY);
     }
 
     private void Zoom()
