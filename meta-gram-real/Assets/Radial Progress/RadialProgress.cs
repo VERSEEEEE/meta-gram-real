@@ -117,7 +117,7 @@ namespace MyUILibrary
             float height = contentRect.height;
 
             var painter = context.painter2D;
-            painter.lineWidth = 10.0f;
+            painter.lineWidth = 20.0f;
             painter.lineCap = LineCap.Butt;
 
             // Draw the track

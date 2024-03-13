@@ -133,6 +133,10 @@ public class ButtonController : MonoBehaviour
         {
             QuitPanel.SetActive(true);
         }
+
+        else {
+            QuitPanel.SetActive(false);
+        }
     }
 
     public void RealQuit()
