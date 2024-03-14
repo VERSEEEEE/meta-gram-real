@@ -1,5 +1,5 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/Radial%20Progress/RadialProgress.uss?fileID=7433441132597879392&amp;guid=7abffc6fa1d8e4f7787406e086a73563&amp;type=3#RadialProgress" />
-    <MyUILibrary.RadialProgress progress="20" name="RadialProgress" style="flex-direction: row; position: absolute; left: 345px; top: 210px;" />
-    <MyUILibrary.RadialProgress progress="80" style="flex-direction: row; position: absolute; left: 500px; top: 210px;" />
+    <MyUILibrary.RadialProgress progress="20" name="RadialProgress" style="flex-direction: row; position: absolute; left: 1123px; top: 695px;" />
+    <MyUILibrary.RadialProgress progress="80" style="flex-direction: row; position: absolute; left: 1608px; top: 695px;" />
 </ui:UXML>
