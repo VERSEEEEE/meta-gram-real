@@ -80,6 +80,10 @@ public class FloorController : MonoBehaviour
                 {
                     ClickFloor(9);
                 }
+                if(hit.collider.gameObject.CompareTag("BellBtn"))
+                {
+                    sceneEffect.FadeToScene("Plaza_verse");
+                }
             }
         }   
     }
