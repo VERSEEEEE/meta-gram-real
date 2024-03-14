@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657886, g: 0.49641275, b: 0.5748176, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1335,36 +1335,6 @@ PrefabInstance:
       addedObject: {fileID: 2123907813}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f73b05766d0749208afcb52b01532c3, type: 3}
---- !u!1 &98055765 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5799813205847063979, guid: 3f73b05766d0749208afcb52b01532c3, type: 3}
-  m_PrefabInstance: {fileID: 98055763}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &98055767 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 833290691866475940, guid: 3f73b05766d0749208afcb52b01532c3, type: 3}
-  m_PrefabInstance: {fileID: 98055763}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &98055768 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3923649491013194396, guid: 3f73b05766d0749208afcb52b01532c3, type: 3}
-  m_PrefabInstance: {fileID: 98055763}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &98055769 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2571043982002645838, guid: 3f73b05766d0749208afcb52b01532c3, type: 3}
-  m_PrefabInstance: {fileID: 98055763}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &98055770 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2639278672915258031, guid: 3f73b05766d0749208afcb52b01532c3, type: 3}
-  m_PrefabInstance: {fileID: 98055763}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &98055771 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8420316980307773242, guid: 3f73b05766d0749208afcb52b01532c3, type: 3}
-  m_PrefabInstance: {fileID: 98055763}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &98055774 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8298409970429059631, guid: 3f73b05766d0749208afcb52b01532c3, type: 3}
@@ -1707,6 +1677,11 @@ Transform:
   - {fileID: 1703755964}
   m_Father: {fileID: 538452146}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!224 &243623810 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1182852309403404942, guid: 3f73b05766d0749208afcb52b01532c3, type: 3}
+  m_PrefabInstance: {fileID: 98055763}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &248597001
 GameObject:
   m_ObjectHideFlags: 0
@@ -2303,7 +2278,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8298409970331014268}
+  m_Father: {fileID: 98055774}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2878,7 +2853,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 649977770}
-  m_Father: {fileID: 1182852309447982301}
+  m_Father: {fileID: 243623810}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5032,7 +5007,7 @@ RectTransform:
   - {fileID: 727650926}
   - {fileID: 229959732}
   - {fileID: 637862093}
-  m_Father: {fileID: 1182852309447982301}
+  m_Father: {fileID: 243623810}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -11441,7 +11416,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 414575999}
-  m_Father: {fileID: 8298409970331014268}
+  m_Father: {fileID: 98055774}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -13728,8 +13703,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 821317169}
-  - {fileID: 439919494}
   - {fileID: 8860162810758444348}
   m_Father: {fileID: 6337011053886142377}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -26984,9 +26957,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 357511026}
-  - {fileID: 2123907813}
+  m_Children: []
   m_Father: {fileID: 6337011053886142377}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -28431,3 +28402,4 @@ SceneRoots:
   - {fileID: 7848650216544835185}
   - {fileID: 6337011053886142377}
   - {fileID: 1275546879602533560}
+  - {fileID: 98055763}
