@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class ClickMirror : MonoBehaviour
 {
     private void OnMouseDown() {
-        FindObjectOfType<SceneEffect_Simple>().FadeToScene("Mirror");
+        Debug.Log("Mirror Clicked");
+        //FindObjectOfType<SceneEffect_Simple>().FadeToScene("Mirror");
+        SceneManager.LoadScene("Mirror");
     }
 }

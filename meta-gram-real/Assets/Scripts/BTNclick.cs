@@ -7,6 +7,6 @@ public class BTNclick : MonoBehaviour
 {
     public void SceneChange()
     {
-        SceneManager.LoadScene("Scene1");
+        SceneManager.LoadScene("HomeMinju");
     }
 }
