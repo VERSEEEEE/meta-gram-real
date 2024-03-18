@@ -5635,7 +5635,7 @@ GameObject:
   - component: {fileID: 1130128158}
   m_Layer: 0
   m_Name: Bed
-  m_TagString: Untagged
+  m_TagString: SelectableBed
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9140,6 +9140,75 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1724069059}
   m_Mesh: {fileID: -8634857227225835632, guid: 02ad78cca7f19f843b49a2e580791919, type: 3}
+--- !u!1001 &1759425275
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3254862560404292856, guid: c25984760effb4811b2bdf2f1b5fab96, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -17147.635
+      objectReference: {fileID: 0}
+    - target: {fileID: 3254862560404292856, guid: c25984760effb4811b2bdf2f1b5fab96, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 353.32812
+      objectReference: {fileID: 0}
+    - target: {fileID: 3254862560404292856, guid: c25984760effb4811b2bdf2f1b5fab96, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 81.49756
+      objectReference: {fileID: 0}
+    - target: {fileID: 3254862560404292856, guid: c25984760effb4811b2bdf2f1b5fab96, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3254862560404292856, guid: c25984760effb4811b2bdf2f1b5fab96, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3254862560404292856, guid: c25984760effb4811b2bdf2f1b5fab96, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3254862560404292856, guid: c25984760effb4811b2bdf2f1b5fab96, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3254862560404292856, guid: c25984760effb4811b2bdf2f1b5fab96, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3254862560404292856, guid: c25984760effb4811b2bdf2f1b5fab96, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3254862560404292856, guid: c25984760effb4811b2bdf2f1b5fab96, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3694917766164370787, guid: c25984760effb4811b2bdf2f1b5fab96, type: 3}
+      propertyPath: m_Name
+      value: ObjectSelectionController
+      objectReference: {fileID: 0}
+    - target: {fileID: 8484369513262112775, guid: c25984760effb4811b2bdf2f1b5fab96, type: 3}
+      propertyPath: maxDistance
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8484369513262112775, guid: c25984760effb4811b2bdf2f1b5fab96, type: 3}
+      propertyPath: selectableTags.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8484369513262112775, guid: c25984760effb4811b2bdf2f1b5fab96, type: 3}
+      propertyPath: selectableTags.Array.data[0]
+      value: SelectableBed
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c25984760effb4811b2bdf2f1b5fab96, type: 3}
 --- !u!1 &1764381455
 GameObject:
   m_ObjectHideFlags: 0
@@ -27865,3 +27934,4 @@ SceneRoots:
   - {fileID: 7848650216544835185}
   - {fileID: 6337011053886142377}
   - {fileID: 1275546879602533560}
+  - {fileID: 1759425275}

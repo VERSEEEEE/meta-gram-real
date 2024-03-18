@@ -17,6 +17,8 @@ TagManager:
   - Btn
   - Feed
   - BellBtn
+  - SelectableBtn
+  - SelectableBed
   layers:
   - Default
   - TransparentFX
