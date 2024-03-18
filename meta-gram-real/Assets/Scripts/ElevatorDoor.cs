@@ -31,7 +31,7 @@ public class ElevatorDoor : MonoBehaviour
 
                 if(Physics.Raycast(ray, out hit))
                 {
-                    if(hit.collider.gameObject.CompareTag("Btn"))
+                    if(hit.collider.gameObject.CompareTag("SelectableBtn"))
                     {
                         Debug.Log("btn click");
                         canMove = true;
