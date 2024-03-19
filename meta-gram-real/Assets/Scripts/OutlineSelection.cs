@@ -15,9 +15,10 @@ public class OutlineSelection : MonoBehaviour
     void Update()
     {
         GameObject closestObject = FindClosestObject(selectableTags);
-        
+
         if (closestObject != null && IsObjectInView(closestObject))
         {
+            Debug.Log(closestObject);
             UpdateClosestObject(closestObject);
 
             if (ShouldHighlight(closestObject))
