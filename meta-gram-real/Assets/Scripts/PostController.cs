@@ -32,15 +32,8 @@ public class PostController : MonoBehaviour
 
     public void SavePost()
     {
-        StopPlayerMoving();
         DeliverWriting();
-        ResumePlayerMoving();
         newPostPanel.SetActive(false);
-    }
-
-    private void StopPlayerMoving() 
-    {
-        player.GetComponent<PlayerController>().enabled = false;
     }
 
     private void DeliverWriting() 
@@ -56,10 +49,5 @@ public class PostController : MonoBehaviour
 
         newPostPanel.transform.GetChild(3).GetComponent<TMP_InputField>().text = "";
         newPostPanel.transform.GetChild(4).GetComponent<TMP_InputField>().text = "";
-    }
-
-    private void ResumePlayerMoving()
-    {
-        player.GetComponent<PlayerController>().enabled = true;
     }
 }
