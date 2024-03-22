@@ -5,13 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/HomeMinju.unity
     guid: 5184fe56fc13a4e40b1fa23c5094a5e3
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Mirror.unity
     guid: 849df17051c0840738c07bf2637fa9ac
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Elevator.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
@@ -20,7 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StartScene.unity
     guid: 595c66dd7cb03304d9e2b52e29326fae
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/furnitureChange.unity
     guid: 99c9720ab356a0642a771bea13969a05
   m_configObjects: {}

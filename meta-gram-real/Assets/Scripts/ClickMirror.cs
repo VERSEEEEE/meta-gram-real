@@ -11,3 +11,4 @@ public class ClickMirror : MonoBehaviour
         SceneManager.LoadScene("Mirror");
     }
 }
+
