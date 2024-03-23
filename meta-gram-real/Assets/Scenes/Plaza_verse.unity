@@ -2004,15 +2004,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9dd50191e7593b4478410d5cfac15095, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9dd50191e7593b4478410d5cfac15095, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9dd50191e7593b4478410d5cfac15095, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9dd50191e7593b4478410d5cfac15095, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -14777,8 +14777,9 @@ GameObject:
   m_Component:
   - component: {fileID: 868085127}
   - component: {fileID: 868085126}
+  - component: {fileID: 868085128}
   m_Layer: 0
-  m_Name: left door
+  m_Name: Ldoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14851,6 +14852,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &868085128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 868085125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4158b3bb38aa4414bb1e09d88903acd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Ldoor: {fileID: 868085125}
+  Rdoor: {fileID: 1986716859}
+  openSpeed: 3
 --- !u!1001 &876976930
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16018,10 +16034,10 @@ GameObject:
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
-  - component: {fileID: 963194230}
+  - component: {fileID: 963194231}
   m_Layer: 0
   m_Name: Main Camera
-  m_TagString: MainCamera
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16052,7 +16068,7 @@ Camera:
   m_ShutterSpeed: 0.005
   m_Aperture: 16
   m_FocusDistance: 10
-  m_FocalLength: 50
+  m_FocalLength: 12.645362
   m_BladeCount: 5
   m_Curvature: {x: 2, y: 11}
   m_BarrelClipping: 0.25
@@ -16066,11 +16082,11 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.45
-  far clip plane: 10000
-  field of view: 65.72124
+  far clip plane: 30000
+  field of view: 87
   orthographic: 0
   orthographic size: 5
-  m_Depth: -1
+  m_Depth: 100
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -16094,8 +16110,8 @@ Transform:
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
   m_LocalRotation: {x: 0.15818162, y: -0, z: -0, w: 0.98741007}
-  m_LocalPosition: {x: -40129, y: 1142, z: 14865}
-  m_LocalScale: {x: 300, y: 399.99997, z: 6.5099993}
+  m_LocalPosition: {x: -39891, y: 1034, z: 15124.57}
+  m_LocalScale: {x: 300, y: 399.99997, z: 6}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -16144,7 +16160,7 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
---- !u!114 &963194230
+--- !u!114 &963194231
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -16153,12 +16169,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 963194225}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f402ff873d196704aa34ff48da79bbce, type: 3}
+  m_Script: {fileID: 11500000, guid: 7e8c03b8119b848699c139b9f721b3c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 2108678760}
-  offsetX: 0
-  offsetY: 20
+  offsetX: -0.7
+  offsetY: 11.7
   offsetZ: -19
 --- !u!1001 &963541741
 PrefabInstance:
@@ -29578,11 +29594,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 409024204744052258, guid: 6bbaea1be78b8d02d852cd83ce21cd94, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3000
+      value: 2199
       objectReference: {fileID: 0}
     - target: {fileID: 409024204744052258, guid: 6bbaea1be78b8d02d852cd83ce21cd94, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3000
+      value: 2169.3
       objectReference: {fileID: 0}
     - target: {fileID: 409024204744052258, guid: 6bbaea1be78b8d02d852cd83ce21cd94, type: 3}
       propertyPath: m_LocalScale.z
@@ -29590,11 +29606,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 409024204744052258, guid: 6bbaea1be78b8d02d852cd83ce21cd94, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -21865.898
+      value: -21922
       objectReference: {fileID: 0}
     - target: {fileID: 409024204744052258, guid: 6bbaea1be78b8d02d852cd83ce21cd94, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0186311
+      value: 44
       objectReference: {fileID: 0}
     - target: {fileID: 409024204744052258, guid: 6bbaea1be78b8d02d852cd83ce21cd94, type: 3}
       propertyPath: m_LocalPosition.z
@@ -29893,8 +29909,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1986716861}
   - component: {fileID: 1986716860}
+  - component: {fileID: 1986716862}
   m_Layer: 0
-  m_Name: right door
+  m_Name: Rdoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29967,6 +29984,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1986716862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1986716859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4158b3bb38aa4414bb1e09d88903acd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Ldoor: {fileID: 868085125}
+  Rdoor: {fileID: 1986716859}
+  openSpeed: 3
 --- !u!1001 &1987563687
 PrefabInstance:
   m_ObjectHideFlags: 0
