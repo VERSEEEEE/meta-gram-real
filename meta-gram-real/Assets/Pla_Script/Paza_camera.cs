@@ -36,7 +36,8 @@ public class Plaza_camera : MonoBehaviour
             Target.transform.position.y + offsetY + 910,
             Target.transform.position.z + offsetZ - 600 
             );
-
+            
         transform.position = Vector3.Lerp(transform.position, TargetPos, Time.deltaTime * CameraSpeed);
+        transform.rotation = Quaternion.Euler(new Vector3(35, Target.transform.rotation.eulerAngles.y, 0));
     }
 }

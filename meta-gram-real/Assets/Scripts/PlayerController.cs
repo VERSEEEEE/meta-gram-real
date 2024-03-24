@@ -26,7 +26,8 @@ public class PlayerController : MonoBehaviour
 
         if (dir != Vector3.zero)
         {
-            transform.rotation = Quaternion.Euler(0, Mathf.Atan2(h, v) * Mathf.Rad2Deg, 0);
+           Vector3 lookDir = new Vector3(h, 0, v);
+            transform.rotation = Quaternion.LookRotation(lookDir);
             animator.SetBool("isWalk", true);
         }
         else
@@ -37,5 +38,6 @@ public class PlayerController : MonoBehaviour
 
         dir.y += Physics.gravity.y * Time.deltaTime;
         characterController.Move(dir * Time.deltaTime);
+
     }
 }
