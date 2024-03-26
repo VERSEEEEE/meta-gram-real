@@ -3,19 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Plaza_Ldoor : MonoBehaviour
+public class Plaza_door : MonoBehaviour
 {
     public GameObject doorL;
+    public GameObject doorR;
     private bool canMove;
     private Vector3 doorLClosePosition;
+    private Vector3 doorRClosePosition;
 
     [SerializeField] private float openSpeed;
+
+    private Camera mainCamera;
     
+    void Awake()
+    {
+        mainCamera = Camera.main;
+        if (mainCamera == null)
+        {
+            Debug.LogError("Main camera is not found in the scene!");
+        }
+    }
 
     void Start()
     {
         canMove = false;
         doorLClosePosition = doorL.transform.position;
+        doorRClosePosition = doorR.transform.position;
     }
     void Update()
     {
@@ -30,14 +43,15 @@ public class Plaza_Ldoor : MonoBehaviour
                 {
                     if(hit.collider.gameObject.CompareTag("SelectableBtn"))
                     {
-                        Debug.Log("Door Open");
+                        Debug.Log("btn click");
                         canMove = true;
+                        StartCoroutine(OpenAndCloseDoor());
                     }
                 }
             }
         }
         else
-        {
+        { 
             StartCoroutine(OpenAndCloseDoor());
         }
     }
@@ -46,7 +60,7 @@ public class Plaza_Ldoor : MonoBehaviour
     {
         DoorOpen();
 
-        while (doorL.transform.position.z < -2.1f)
+        while(doorL.transform.position.x < 1040 && doorR.transform.position.x > -1050)
         {
             yield return null;
         }
@@ -54,9 +68,10 @@ public class Plaza_Ldoor : MonoBehaviour
     }
     void DoorOpen()
     {
-        if(doorL.transform.position.z >= -2.1f) 
+        if(doorL.transform.position.x < 1040 && doorR.transform.position.x >= -1050)
         {
-            doorL.transform.Translate(Vector3.right * Time.deltaTime * openSpeed);
+            doorL.transform.Translate(Vector3.left * Time.deltaTime * openSpeed);
+            doorR.transform.Translate(Vector3.right * Time.deltaTime * openSpeed);
         }
     }
 
@@ -68,6 +83,7 @@ public class Plaza_Ldoor : MonoBehaviour
     void DoorClose()
     {
         doorL.transform.position = Vector3.MoveTowards(doorL.transform.position, doorLClosePosition, openSpeed * Time.deltaTime);
+        doorR.transform.position = Vector3.MoveTowards(doorR.transform.position, doorRClosePosition, openSpeed * Time.deltaTime);
         canMove = false;
     }
 }

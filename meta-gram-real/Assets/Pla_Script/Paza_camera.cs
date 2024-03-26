@@ -31,13 +31,7 @@ public class Plaza_camera : MonoBehaviour
             transform.rotation = Quaternion.Euler(ymove, xmove, 0); // 이동량에 따라 카메라의 바라보는 방향을 조정합니다.
         }
         
-        TargetPos = new Vector3(
-            Target.transform.position.x + offsetX,
-            Target.transform.position.y + offsetY + 910,
-            Target.transform.position.z + offsetZ - 600 
-            );
-        
-        if (Target.transform.rotation.y == 0) { // 아래 키
+        if (Target.transform.rotation.y == 0) { // 위 키
             TargetPos = new Vector3(
             Target.transform.position.x + offsetX,
             Target.transform.position.y + offsetY + 910,
@@ -61,11 +55,11 @@ public class Plaza_camera : MonoBehaviour
             );
         }
             
-        else if (Target.transform.rotation.y == 180) { // 위 키
+        else if (Target.transform.rotation.y == 180) { // 아래 키
             TargetPos = new Vector3(
             Target.transform.position.x + offsetX,
             Target.transform.position.y + offsetY + 910,
-            Target.transform.position.z + offsetZ - 600 
+            Target.transform.position.z + offsetZ  
             );
         }
 
