@@ -14785,7 +14785,6 @@ GameObject:
   m_Component:
   - component: {fileID: 868085127}
   - component: {fileID: 868085126}
-  - component: {fileID: 868085128}
   m_Layer: 0
   m_Name: Ldoor
   m_TagString: Untagged
@@ -14860,21 +14859,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 892502118}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &868085128
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 868085125}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4158b3bb38aa4414bb1e09d88903acd6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  doorL: {fileID: 868085125}
-  doorR: {fileID: 1986716859}
-  openSpeed: 0.2
 --- !u!1001 &876976930
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30038,7 +30022,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1986716861}
   - component: {fileID: 1986716860}
-  - component: {fileID: 1986716862}
   m_Layer: 0
   m_Name: Rdoor
   m_TagString: Untagged
@@ -30113,21 +30096,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 892502118}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1986716862
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1986716859}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4158b3bb38aa4414bb1e09d88903acd6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  doorL: {fileID: 868085125}
-  doorR: {fileID: 1986716859}
-  openSpeed: 0.2
 --- !u!1001 &1987563687
 PrefabInstance:
   m_ObjectHideFlags: 0
