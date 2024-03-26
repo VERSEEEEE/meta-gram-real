@@ -5,9 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
+    SceneEffect_Simple sceneEffect;
+
+    void Start()
+    {
+        sceneEffect = FindObjectOfType<SceneEffect_Simple>();
+    }
+
     public void LoadPlazaScene()
     {
-        SceneManager.LoadScene("Plaza_verse");
+        sceneEffect.FadeToScene("Plaza_verse");
     }
 }
 
