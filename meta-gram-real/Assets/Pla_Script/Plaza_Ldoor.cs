@@ -1,53 +1,73 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Plaza_Ldoor : MonoBehaviour
 {
-    public Vector3 targetPosition; // 이동하고자 하는 목표 위치
-    public float moveSpeed = 5f; // 이동 속도
+    public GameObject doorL;
+    private bool canMove;
+    private Vector3 doorLClosePosition;
 
-    private bool isMoving = false;
+    [SerializeField] private float openSpeed;
+    
 
-    private void Update()
+    void Start()
     {
-        // 마우스 버튼 클릭 시 이동 시작
-        if (Input.GetMouseButton(0) && !isMoving)
-        {
-            SetTargetPosition();
-        }
-
-        // 이동 중일 때만 이동
-        if (isMoving)
-        {
-            MoveToTarget();
-        }
+        canMove = false;
+        doorLClosePosition = doorL.transform.position;
     }
-
-    // 클릭된 위치를 목표 위치로 설정
-    private void SetTargetPosition()
+    void Update()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-
-        if (Physics.Raycast(ray, out hit))
+        if(!canMove)
         {
-            if (hit.collider != null)
+            if(Input.GetMouseButtonDown(0))
             {
-                targetPosition = hit.point;
-                targetPosition.y = transform.position.y; // 클릭된 위치의 y값을 현재 오브젝트의 y값으로 맞춰줌
-                isMoving = true;
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
+
+                if(Physics.Raycast(ray, out hit))
+                {
+                    if(hit.collider.gameObject.CompareTag("SelectableBtn"))
+                    {
+                        Debug.Log("Door Open");
+                        canMove = true;
+                    }
+                }
             }
         }
+        else
+        {
+            StartCoroutine(OpenAndCloseDoor());
+        }
     }
 
-    // 목표 위치로 이동
-    private void MoveToTarget()
+    IEnumerator OpenAndCloseDoor()
     {
-        transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
+        DoorOpen();
 
-        // 목표 위치에 도달했는지 확인
-        if (transform.position == targetPosition)
+        while (doorL.transform.position.z < -2.1f)
         {
-            isMoving = false;
+            yield return null;
         }
+        StartCoroutine(CloseDoorAfterDelay(6f));
+    }
+    void DoorOpen()
+    {
+        if(doorL.transform.position.z >= -2.1f) 
+        {
+            doorL.transform.Translate(Vector3.right * Time.deltaTime * openSpeed);
+        }
+    }
+
+    IEnumerator CloseDoorAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        DoorClose();
+    }
+    void DoorClose()
+    {
+        doorL.transform.position = Vector3.MoveTowards(doorL.transform.position, doorLClosePosition, openSpeed * Time.deltaTime);
+        canMove = false;
     }
 }

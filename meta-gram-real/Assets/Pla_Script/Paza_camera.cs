@@ -36,7 +36,39 @@ public class Plaza_camera : MonoBehaviour
             Target.transform.position.y + offsetY + 910,
             Target.transform.position.z + offsetZ - 600 
             );
+        
+        if (Target.transform.rotation.y == 0) { // 아래 키
+            TargetPos = new Vector3(
+            Target.transform.position.x + offsetX,
+            Target.transform.position.y + offsetY + 910,
+            Target.transform.position.z + offsetZ - 600 
+            );
+        }
+
+        else if (Target.transform.rotation.y == 90) { 
+            TargetPos = new Vector3(
+            Target.transform.position.x + offsetX,
+            Target.transform.position.y + offsetY + 910,
+            Target.transform.position.z + offsetZ - 600 
+            );
+        }
+
+        else if (Target.transform.rotation.y == -90) {
+            TargetPos = new Vector3(
+            Target.transform.position.x + offsetX,
+            Target.transform.position.y + offsetY + 910,
+            Target.transform.position.z + offsetZ - 600 
+            );
+        }
             
+        else if (Target.transform.rotation.y == 180) { // 위 키
+            TargetPos = new Vector3(
+            Target.transform.position.x + offsetX,
+            Target.transform.position.y + offsetY + 910,
+            Target.transform.position.z + offsetZ - 600 
+            );
+        }
+
         transform.position = Vector3.Lerp(transform.position, TargetPos, Time.deltaTime * CameraSpeed);
         transform.rotation = Quaternion.Euler(new Vector3(35, Target.transform.rotation.eulerAngles.y, 0));
     }

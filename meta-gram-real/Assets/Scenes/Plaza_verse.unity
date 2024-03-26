@@ -14872,8 +14872,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4158b3bb38aa4414bb1e09d88903acd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPosition: {x: -38868, y: 1040, z: 7739}
-  moveSpeed: 0.8
+  doorL: {fileID: 868085125}
+  openSpeed: 0.2
 --- !u!1001 &876976930
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30003,8 +30003,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56c73e247035f4a5993d1683a0093bf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPosition: {x: -41022, y: 1040, z: 7739}
-  moveSpeed: 0.8
 --- !u!1001 &1987563687
 PrefabInstance:
   m_ObjectHideFlags: 0
