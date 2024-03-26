@@ -21,6 +21,7 @@ TagManager:
   - SelectableBed
   - SelectableMirror
   - SelectableSphere
+  - PlazaDoorBtn
   layers:
   - Default
   - TransparentFX

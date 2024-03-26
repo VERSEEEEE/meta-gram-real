@@ -8,28 +8,13 @@ public class Plaza_door : MonoBehaviour
     public GameObject doorL;
     public GameObject doorR;
     private bool canMove;
-    private Vector3 doorLClosePosition;
-    private Vector3 doorRClosePosition;
-
     [SerializeField] private float openSpeed;
-
-    private Camera mainCamera;
-    
-    void Awake()
-    {
-        mainCamera = Camera.main;
-        if (mainCamera == null)
-        {
-            Debug.LogError("Main camera is not found in the scene!");
-        }
-    }
 
     void Start()
     {
         canMove = false;
-        doorLClosePosition = doorL.transform.position;
-        doorRClosePosition = doorR.transform.position;
     }
+
     void Update()
     {
         if(!canMove)
@@ -41,49 +26,40 @@ public class Plaza_door : MonoBehaviour
 
                 if(Physics.Raycast(ray, out hit))
                 {
-                    if(hit.collider.gameObject.CompareTag("SelectableBtn"))
+                    if(hit.collider.gameObject.CompareTag("PlazaDoorBtn"))
                     {
                         Debug.Log("btn click");
                         canMove = true;
-                        StartCoroutine(OpenAndCloseDoor());
                     }
                 }
             }
         }
         else
-        { 
-            StartCoroutine(OpenAndCloseDoor());
+        {
+            StartCoroutine(OpenDoor());
         }
     }
 
-    IEnumerator OpenAndCloseDoor()
+    IEnumerator OpenDoor()
     {
-        DoorOpen();
+        Debug.Log("open");
 
-        while(doorL.transform.position.x < 1040 && doorR.transform.position.x > -1050)
+        while(doorL.transform.position.x < 1200f || doorR.transform.position.x > -1200f)
         {
+            doorL.transform.Translate(Vector3.right * openSpeed * Time.deltaTime);
+            doorR.transform.Translate(Vector3.left * openSpeed * Time.deltaTime);
             yield return null;
         }
-        StartCoroutine(CloseDoorAfterDelay(6f));
     }
     void DoorOpen()
     {
-        if(doorL.transform.position.x < 1040 && doorR.transform.position.x >= -1050)
-        {
-            doorL.transform.Translate(Vector3.left * Time.deltaTime * openSpeed);
-            doorR.transform.Translate(Vector3.right * Time.deltaTime * openSpeed);
-        }
-    }
-
-    IEnumerator CloseDoorAfterDelay(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        DoorClose();
-    }
-    void DoorClose()
-    {
-        doorL.transform.position = Vector3.MoveTowards(doorL.transform.position, doorLClosePosition, openSpeed * Time.deltaTime);
-        doorR.transform.position = Vector3.MoveTowards(doorR.transform.position, doorRClosePosition, openSpeed * Time.deltaTime);
-        canMove = false;
+        // if(doorL.transform.position.x <= 1200f && doorR.transform.position.x >= -1200f)
+        // {
+        //     doorL.transform.Translate(Vector3.right * Time.deltaTime * openSpeed);
+        //     doorR.transform.Translate(Vector3.left * Time.deltaTime * openSpeed);
+        // }
+        // Debug.Log("open");
+        doorL.transform.Translate(new Vector3(1102, 0, 0));
+        doorR.transform.Translate(new Vector3(-1102, 0, 0));
     }
 }
