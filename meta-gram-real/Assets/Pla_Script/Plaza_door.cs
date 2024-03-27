@@ -44,21 +44,23 @@ public class Plaza_door : MonoBehaviour
     {
         Debug.Log("open");
 
-        while(doorL.transform.position.x < 1200f || doorR.transform.position.x > -1200f)
+        float startTime = Time.time; // 현재 시간 기록
+
+        while (Time.time - startTime < 2f) // 시작 후 2초가 지날 때까지 반복
         {
             doorL.transform.Translate(Vector3.right * openSpeed * Time.deltaTime);
             doorR.transform.Translate(Vector3.left * openSpeed * Time.deltaTime);
             yield return null;
         }
+
+        // 시간이 2초가 지나면 문이 열리는 동작을 멈춤
+        DoorOpen(); 
+        canMove = false;
     }
+
     void DoorOpen()
     {
-        // if(doorL.transform.position.x <= 1200f && doorR.transform.position.x >= -1200f)
-        // {
-        //     doorL.transform.Translate(Vector3.right * Time.deltaTime * openSpeed);
-        //     doorR.transform.Translate(Vector3.left * Time.deltaTime * openSpeed);
-        // }
-        // Debug.Log("open");
+        // Move the doors to fully open position
         doorL.transform.Translate(new Vector3(1102, 0, 0));
         doorR.transform.Translate(new Vector3(-1102, 0, 0));
     }
