@@ -18,12 +18,14 @@ public class CharacterMove : MonoBehaviour
     [SerializeField]
     private Camera camera; 
     private Rigidbody rigidbody;
+    private Animator animator;
 
     public float zoomSpeed = 10.0f;
 
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -41,9 +43,16 @@ public class CharacterMove : MonoBehaviour
         float moveDirX = Input.GetAxis("Horizontal");  
         float moveDirY = Input.GetAxis("Vertical");
         Vector3 moveHorizontal = transform.right * moveDirX; 
-        Vector3 moveVertical = transform.forward * moveDirY; 
+        Vector3 moveVertical = transform.forward * moveDirY;
+        Vector3 velocity = Vector3.zero;
 
-        Vector3 velocity = (moveHorizontal + moveVertical).normalized * walkSpeed; 
+        if (moveHorizontal != Vector3.zero || moveVertical != Vector3.zero)
+        {
+            velocity = (moveHorizontal + moveVertical).normalized * walkSpeed; 
+            animator.SetBool("isWalk", true);
+        }
+        else
+            animator.SetBool("isWalk", false);
 
         rigidbody.MovePosition(transform.position + velocity * Time.deltaTime);
     }
