@@ -1114,7 +1114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc0666260fddb4996a1faed62684062b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  searchPanel: {fileID: 440060205}
+  searchPanel: {fileID: 938438126}
 --- !u!4 &777619314
 Transform:
   m_ObjectHideFlags: 0
