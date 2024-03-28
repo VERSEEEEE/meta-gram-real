@@ -5,7 +5,7 @@ using UnityEngine;
 public class Floating : MonoBehaviour
 {
     public Vector3 pos; // 현재 위치
-    float delta = 2.0f; // 상(하)로 이동 가능한 (y) 최대값
+    float delta = 1.0f; // 상(하)로 이동 가능한 (y) 최대값
     float speed = 1.5f; // 이동 속도
 
     void Start()

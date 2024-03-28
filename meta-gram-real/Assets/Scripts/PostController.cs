@@ -16,6 +16,8 @@ public class PostController : MonoBehaviour
     private GameObject addPost;
     private GameObject player;
 
+    private GraphicRaycaster raycaster;
+
     void Start() 
     {
         player = GameObject.Find("Player");

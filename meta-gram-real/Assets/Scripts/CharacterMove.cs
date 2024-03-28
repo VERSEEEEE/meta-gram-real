@@ -22,20 +22,51 @@ public class CharacterMove : MonoBehaviour
 
     public float zoomSpeed = 10.0f;
 
+    enum SceneType { Plaza_verse, Elevator, HomeMinju }
+    SceneType currentScene;
+
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
+
+        
     }
 
     void Update()
     {
+        string sceneName = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
+        SetWalkSpeed(sceneName);
+        
         Move();
 
         CameraRotation();
         PlayerRotation();
 
         Zoom();
+    }
+
+    private void SetWalkSpeed(string sceneName)
+    {
+        switch (sceneName)
+        {
+            case "Plaza_verse":
+                walkSpeed = 5000f;
+                Debug.Log("setPlazaSpeed");
+                break;
+            case "Elevator":
+                walkSpeed = 2f;
+                Debug.Log("setElevatorSpeed");
+                break;
+            case "HomeMinju":
+                walkSpeed = 250f;
+                Debug.Log("setHomeSpeed");
+                break;
+            default:
+                // 기본값 설정
+                walkSpeed = 5f;
+                break;
+        }
     }
 
     private void Move()
