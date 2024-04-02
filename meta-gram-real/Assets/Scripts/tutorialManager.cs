@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class tutorialManager : MonoBehaviour
+public class TutorialManager : MonoBehaviour
 {
     public GameObject tutorial;
 
@@ -11,11 +11,11 @@ public class tutorialManager : MonoBehaviour
     void Start()
     {
         tutorial.SetActive(true);
-        InvokeRepeating("FadeOutTutorial", 2f, 0.005f);
+        Invoke("FadeOutTutorial", 2f);
     }
 
     // Update is called once per frame
-    void FadeOutTutorial()
+    public void FadeOutTutorial()
     {
         CanvasGroup canvasGroup = tutorial.GetComponent<CanvasGroup>();
         if (canvasGroup == null)
@@ -28,7 +28,6 @@ public class tutorialManager : MonoBehaviour
         if (canvasGroup.alpha <= 0)
         {
             canvasGroup.alpha = 0; 
-            CancelInvoke("FadeOutTutorial"); 
             tutorial.SetActive(false); 
         }
     }

@@ -134,7 +134,7 @@ public class CharacterMove : MonoBehaviour
         {
             float viewLimit = camera.fieldOfView + distance;
             float minZoom = 30f;
-            float maxZoom = 80f;
+            float maxZoom = 70f;
 
             camera.fieldOfView = Mathf.Clamp(viewLimit, minZoom, maxZoom);
 
