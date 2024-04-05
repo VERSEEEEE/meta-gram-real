@@ -34151,7 +34151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbd028547323141fc90a32ae2348b58f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 5000
+  walkSpeed: 8000
   lookSensitivity: 2
   cameraRotationLimit: 50
   camera: {fileID: 1596504024}

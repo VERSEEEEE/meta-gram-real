@@ -51,7 +51,7 @@ public class CharacterMove : MonoBehaviour
         switch (sceneName)
         {
             case "Plaza_verse":
-                walkSpeed = 5000f;
+                walkSpeed = 8000f;
                 Debug.Log("setPlazaSpeed");
                 break;
             case "Elevator":
